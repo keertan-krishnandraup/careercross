@@ -53,7 +53,7 @@ def cc_driverm2(process_queue_size, meta1_queue):
     loop.run_until_complete(make_tasks_and_exc(meta1_queue, process_queue_size, 2, hit_d2_and_store))
 
 
-def get_jap_deets(no_processes):
+def jap_deets(no_processes):
     cc_meta1_queue = get_meta_q('careercross', 'meta1')
     print(cc_meta1_queue.qsize())
     process_queue_size = (cc_meta1_queue.qsize() // no_processes) + 1
@@ -70,6 +70,6 @@ def get_jap_deets(no_processes):
 if __name__=='__main__':
     PROCESSES = 16
     start = time.time()
-    get_jap_deets(PROCESSES)
+    jap_deets(PROCESSES)
     end = time.time()
     print(str(end-start), ' seconds')
