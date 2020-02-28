@@ -62,13 +62,13 @@ def cc_driverd3(meta1_queue):
     loop = asyncio.get_event_loop()
     loop.run_until_complete(make_tasks(meta1_queue, hit_d3_and_store))
 
-def get_cat_data():
+def cat_data():
     cc_meta1a_queue = get_meta_q('careercross', 'prefecture_meta')
     print(cc_meta1a_queue.qsize())
     cc_driverd3(cc_meta1a_queue)
 
 if __name__=='__main__':
     start = time.time()
-    get_cat_data()
+    cat_data()
     end = time.time()
     print(str(end-start), ' seconds')
